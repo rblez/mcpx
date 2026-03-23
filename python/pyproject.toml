@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcpx"
+version = "0.1.0"
+description = "CLI to install and configure MCP servers in any editor"
+authors = [{ name = "rblez", email = "rblez@proton.me" }]
+license = { text = "MIT" }
+keywords = ["mcp", "claude", "cursor", "ai", "cli", "model-context-protocol"]
+requires-python = ">=3.10"
+dependencies = [
+  "typer>=0.12.0",
+  "rich>=13.0.0",
+  "questionary>=2.0.0",
+]
+
+[project.scripts]
+mcpx = "mcpx.cli:app"
+
+[project.urls]
+Repository = "https://github.com/rblez/mcpx"

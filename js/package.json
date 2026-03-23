@@ -1,0 +1,54 @@
+{
+  "name": "mcpx",
+  "version": "0.2.0",
+  "description": "CLI to install and configure MCP servers in any editor",
+  "keywords": [
+    "mcp",
+    "claude",
+    "cursor",
+    "ai",
+    "cli",
+    "model-context-protocol",
+    "copilot",
+    "windsurf",
+    "zed"
+  ],
+  "homepage": "https://github.com/rblez/mcpx#readme",
+  "bugs": {
+    "url": "https://github.com/rblez/mcpx/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rblez/mcpx.git"
+  },
+  "license": "MIT",
+  "author": "rblez",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "mcpx": "bin/mcpx.js"
+  },
+  "scripts": {
+    "dev": "node bin/mcpx.js",
+    "start": "node bin/mcpx.js",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "lint": "echo 'No linter configured'"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "inquirer": "^9.2.0",
+    "open": "^10.0.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin",
+    "src",
+    "registry.json"
+  ]
+}

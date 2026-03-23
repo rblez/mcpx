@@ -1,0 +1,1544 @@
+{
+  "supabase": {
+    "name": "Supabase",
+    "description": "Interact with your Supabase project via AI",
+    "npm": "@supabase/mcp-server-supabase",
+    "fields": [
+      {
+        "key": "SUPABASE_ACCESS_TOKEN",
+        "label": "Access Token",
+        "url": "https://supabase.com/dashboard/account/tokens",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server-supabase", "--access-token", "${SUPABASE_ACCESS_TOKEN}"]
+    }
+  },
+  "telegram": {
+    "name": "Telegram Bot",
+    "description": "Send messages, manage channels and bots",
+    "npm": null,
+    "fields": [
+      {
+        "key": "TELEGRAM_BOT_TOKEN",
+        "label": "Bot Token",
+        "url": "https://t.me/BotFather",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "mcp-telegram", "--token", "${TELEGRAM_BOT_TOKEN}"]
+    }
+  },
+  "github": {
+    "name": "GitHub",
+    "description": "Manage repos, issues and PRs",
+    "npm": "@modelcontextprotocol/server-github",
+    "fields": [
+      {
+        "key": "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "label": "Personal Access Token",
+        "url": "https://github.com/settings/tokens",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    }
+  },
+  "vercel": {
+    "name": "Vercel",
+    "description": "Deploy and manage Vercel projects",
+    "npm": null,
+    "fields": [
+      {
+        "key": "VERCEL_TOKEN",
+        "label": "API Token",
+        "url": "https://vercel.com/account/tokens",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@vercel/mcp-adapter", "--token", "${VERCEL_TOKEN}"]
+    }
+  },
+  "cloudflare": {
+    "name": "Cloudflare",
+    "description": "Manage Workers, D1, R2 and KV",
+    "npm": "@cloudflare/mcp-server-cloudflare",
+    "fields": [
+      {
+        "key": "CLOUDFLARE_API_TOKEN",
+        "label": "API Token",
+        "url": "https://dash.cloudflare.com/profile/api-tokens",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@cloudflare/mcp-server-cloudflare"],
+      "env": {
+        "CLOUDFLARE_API_TOKEN": "${CLOUDFLARE_API_TOKEN}"
+      }
+    }
+  },
+  "filesystem": {
+    "name": "Filesystem",
+    "description": "Read and write local files",
+    "npm": "@modelcontextprotocol/server-filesystem",
+    "fields": [
+      {
+        "key": "ALLOWED_PATH",
+        "label": "Allowed directory path (e.g. /home/user/projects)",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${ALLOWED_PATH}"]
+    }
+  },
+  "postgres": {
+    "name": "PostgreSQL",
+    "description": "Query and manage PostgreSQL databases",
+    "npm": "@modelcontextprotocol/server-postgres",
+    "fields": [
+      {
+        "key": "DATABASE_URL",
+        "label": "PostgreSQL Connection String",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"]
+    }
+  },
+  "sqlite": {
+    "name": "SQLite",
+    "description": "Query and manage SQLite databases",
+    "npm": "@modelcontextprotocol/server-sqlite",
+    "fields": [
+      {
+        "key": "DATABASE_PATH",
+        "label": "SQLite database file path",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "${DATABASE_PATH}"]
+    }
+  },
+  "redis": {
+    "name": "Redis",
+    "description": "Interact with Redis key-value stores",
+    "npm": "@modelcontextprotocol/server-redis",
+    "fields": [
+      {
+        "key": "REDIS_URL",
+        "label": "Redis connection URL",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-redis", "${REDIS_URL}"]
+    }
+  },
+  "git": {
+    "name": "Git",
+    "description": "Git operations and repository management",
+    "npm": "@modelcontextprotocol/server-git",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git"]
+    }
+  },
+  "gitlab": {
+    "name": "GitLab",
+    "description": "Manage GitLab repos, issues and MRs",
+    "npm": "@modelcontextprotocol/server-gitlab",
+    "fields": [
+      {
+        "key": "GITLAB_PERSONAL_ACCESS_TOKEN",
+        "label": "Personal Access Token",
+        "url": "https://gitlab.com/-/profile/personal_access_tokens",
+        "secret": true
+      },
+      {
+        "key": "GITLAB_API_URL",
+        "label": "GitLab API URL (optional for self-hosted)",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gitlab"],
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "${GITLAB_PERSONAL_ACCESS_TOKEN}",
+        "GITLAB_API_URL": "${GITLAB_API_URL}"
+      }
+    }
+  },
+  "notion": {
+    "name": "Notion",
+    "description": "Manage Notion pages, databases and tasks",
+    "npm": "@modelcontextprotocol/server-notion",
+    "fields": [
+      {
+        "key": "NOTION_INTEGRATION_TOKEN",
+        "label": "Integration Token",
+        "url": "https://www.notion.so/my-integrations",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-notion"],
+      "env": {
+        "NOTION_INTEGRATION_TOKEN": "${NOTION_INTEGRATION_TOKEN}"
+      }
+    }
+  },
+  "slack": {
+    "name": "Slack",
+    "description": "Send messages and manage Slack channels",
+    "npm": "@modelcontextprotocol/server-slack",
+    "fields": [
+      {
+        "key": "SLACK_BOT_TOKEN",
+        "label": "Bot Token",
+        "url": "https://api.slack.com/apps",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}"
+      }
+    }
+  },
+  "google-drive": {
+    "name": "Google Drive",
+    "description": "Access and manage Google Drive files",
+    "npm": "@modelcontextprotocol/server-google-drive",
+    "fields": [
+      {
+        "key": "GOOGLE_APPLICATION_CREDENTIALS",
+        "label": "Service Account JSON",
+        "url": "https://console.cloud.google.com/apis/credentials",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-google-drive"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}"
+      }
+    }
+  },
+  "aws": {
+    "name": "AWS",
+    "description": "Manage AWS resources (S3, EC2, Lambda)",
+    "npm": "@modelcontextprotocol/server-aws",
+    "fields": [
+      {
+        "key": "AWS_ACCESS_KEY_ID",
+        "label": "Access Key ID",
+        "url": "https://console.aws.amazon.com/iam/home?#/security_credentials",
+        "secret": true
+      },
+      {
+        "key": "AWS_SECRET_ACCESS_KEY",
+        "label": "Secret Access Key",
+        "url": null,
+        "secret": true
+      },
+      {
+        "key": "AWS_REGION",
+        "label": "Default Region",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-aws"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY}",
+        "AWS_REGION": "${AWS_REGION}"
+      }
+    }
+  },
+  "gcp": {
+    "name": "Google Cloud Platform",
+    "description": "Manage GCP resources (Compute, Storage, BigQuery)",
+    "npm": "@modelcontextprotocol/server-gcp",
+    "fields": [
+      {
+        "key": "GOOGLE_APPLICATION_CREDENTIALS",
+        "label": "Service Account JSON Path",
+        "url": "https://console.cloud.google.com/apis/credentials",
+        "secret": true
+      },
+      {
+        "key": "GCP_PROJECT_ID",
+        "label": "Project ID",
+        "url": "https://console.cloud.google.com",
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gcp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "GCP_PROJECT_ID": "${GCP_PROJECT_ID}"
+      }
+    }
+  },
+  "azure": {
+    "name": "Azure",
+    "description": "Manage Azure resources (VMs, Storage, Functions)",
+    "npm": "@modelcontextprotocol/server-azure",
+    "fields": [
+      {
+        "key": "AZURE_CLIENT_ID",
+        "label": "Client ID",
+        "url": "https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade",
+        "secret": true
+      },
+      {
+        "key": "AZURE_CLIENT_SECRET",
+        "label": "Client Secret",
+        "url": null,
+        "secret": true
+      },
+      {
+        "key": "AZURE_TENANT_ID",
+        "label": "Tenant ID",
+        "url": null,
+        "secret": true
+      },
+      {
+        "key": "AZURE_SUBSCRIPTION_ID",
+        "label": "Subscription ID",
+        "url": "https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-azure"],
+      "env": {
+        "AZURE_CLIENT_ID": "${AZURE_CLIENT_ID}",
+        "AZURE_CLIENT_SECRET": "${AZURE_CLIENT_SECRET}",
+        "AZURE_TENANT_ID": "${AZURE_TENANT_ID}",
+        "AZURE_SUBSCRIPTION_ID": "${AZURE_SUBSCRIPTION_ID}"
+      }
+    }
+  },
+  "docker": {
+    "name": "Docker",
+    "description": "Manage Docker containers and images",
+    "npm": "@modelcontextprotocol/server-docker",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-docker"]
+    }
+  },
+  "kubernetes": {
+    "name": "Kubernetes",
+    "description": "Manage K8s clusters, pods and deployments",
+    "npm": "@modelcontextprotocol/server-kubernetes",
+    "fields": [
+      {
+        "key": "KUBECONFIG",
+        "label": "Kubeconfig file path",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-kubernetes"],
+      "env": {
+        "KUBECONFIG": "${KUBECONFIG}"
+      }
+    }
+  },
+  "stripe": {
+    "name": "Stripe",
+    "description": "Manage payments, customers and subscriptions",
+    "npm": "@modelcontextprotocol/server-stripe",
+    "fields": [
+      {
+        "key": "STRIPE_SECRET_KEY",
+        "label": "Secret API Key",
+        "url": "https://dashboard.stripe.com/apikeys",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-stripe"],
+      "env": {
+        "STRIPE_SECRET_KEY": "${STRIPE_SECRET_KEY}"
+      }
+    }
+  },
+  "sendgrid": {
+    "name": "SendGrid",
+    "description": "Send emails and manage templates",
+    "npm": "@modelcontextprotocol/server-sendgrid",
+    "fields": [
+      {
+        "key": "SENDGRID_API_KEY",
+        "label": "API Key",
+        "url": "https://app.sendgrid.com/settings/api_keys",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sendgrid"],
+      "env": {
+        "SENDGRID_API_KEY": "${SENDGRID_API_KEY}"
+      }
+    }
+  },
+  "twilio": {
+    "name": "Twilio",
+    "description": "Send SMS, make calls and manage messaging",
+    "npm": "@modelcontextprotocol/server-twilio",
+    "fields": [
+      {
+        "key": "TWILIO_ACCOUNT_SID",
+        "label": "Account SID",
+        "url": "https://console.twilio.com/us1/develop/accountsettings/accountsummary",
+        "secret": true
+      },
+      {
+        "key": "TWILIO_AUTH_TOKEN",
+        "label": "Auth Token",
+        "url": null,
+        "secret": true
+      },
+      {
+        "key": "TWILIO_PHONE_NUMBER",
+        "label": "Phone Number",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-twilio"],
+      "env": {
+        "TWILIO_ACCOUNT_SID": "${TWILIO_ACCOUNT_SID}",
+        "TWILIO_AUTH_TOKEN": "${TWILIO_AUTH_TOKEN}",
+        "TWILIO_PHONE_NUMBER": "${TWILIO_PHONE_NUMBER}"
+      }
+    }
+  },
+  "linear": {
+    "name": "Linear",
+    "description": "Manage issues, projects and sprints",
+    "npm": "@modelcontextprotocol/server-linear",
+    "fields": [
+      {
+        "key": "LINEAR_API_KEY",
+        "label": "API Key",
+        "url": "https://linear.app/settings/api",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-linear"],
+      "env": {
+        "LINEAR_API_KEY": "${LINEAR_API_KEY}"
+      }
+    }
+  },
+  "jira": {
+    "name": "Jira",
+    "description": "Manage Jira issues and projects",
+    "npm": "@modelcontextprotocol/server-jira",
+    "fields": [
+      {
+        "key": "JIRA_API_TOKEN",
+        "label": "API Token",
+        "url": "https://id.atlassian.com/manage-profile/security/api-tokens",
+        "secret": true
+      },
+      {
+        "key": "JIRA_INSTANCE_URL",
+        "label": "Jira Instance URL",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "JIRA_USER_EMAIL",
+        "label": "User Email",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-jira"],
+      "env": {
+        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}",
+        "JIRA_INSTANCE_URL": "${JIRA_INSTANCE_URL}",
+        "JIRA_USER_EMAIL": "${JIRA_USER_EMAIL}"
+      }
+    }
+  },
+  "confluence": {
+    "name": "Confluence",
+    "description": "Manage Confluence pages and spaces",
+    "npm": "@modelcontextprotocol/server-confluence",
+    "fields": [
+      {
+        "key": "CONFLUENCE_API_TOKEN",
+        "label": "API Token",
+        "url": "https://id.atlassian.com/manage-profile/security/api-tokens",
+        "secret": true
+      },
+      {
+        "key": "CONFLUENCE_INSTANCE_URL",
+        "label": "Confluence Instance URL",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "CONFLUENCE_USER_EMAIL",
+        "label": "User Email",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-confluence"],
+      "env": {
+        "CONFLUENCE_API_TOKEN": "${CONFLUENCE_API_TOKEN}",
+        "CONFLUENCE_INSTANCE_URL": "${CONFLUENCE_INSTANCE_URL}",
+        "CONFLUENCE_USER_EMAIL": "${CONFLUENCE_USER_EMAIL}"
+      }
+    }
+  },
+  "airtable": {
+    "name": "Airtable",
+    "description": "Manage Airtable bases and records",
+    "npm": "@modelcontextprotocol/server-airtable",
+    "fields": [
+      {
+        "key": "AIRTABLE_API_KEY",
+        "label": "API Key",
+        "url": "https://airtable.com/create/tokens",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-airtable"],
+      "env": {
+        "AIRTABLE_API_KEY": "${AIRTABLE_API_KEY}"
+      }
+    }
+  },
+  "figma": {
+    "name": "Figma",
+    "description": "Access Figma files and components",
+    "npm": "@modelcontextprotocol/server-figma",
+    "fields": [
+      {
+        "key": "FIGMA_ACCESS_TOKEN",
+        "label": "Access Token",
+        "url": "https://www.figma.com/developers/api#access-tokens",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-figma"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${FIGMA_ACCESS_TOKEN}"
+      }
+    }
+  },
+  "shopify": {
+    "name": "Shopify",
+    "description": "Manage Shopify stores and products",
+    "npm": "@modelcontextprotocol/server-shopify",
+    "fields": [
+      {
+        "key": "SHOPIFY_STORE_NAME",
+        "label": "Store Name",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "SHOPIFY_API_KEY",
+        "label": "API Key",
+        "url": "https://partners.shopify.com",
+        "secret": true
+      },
+      {
+        "key": "SHOPIFY_API_PASSWORD",
+        "label": "API Password",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-shopify"],
+      "env": {
+        "SHOPIFY_STORE_NAME": "${SHOPIFY_STORE_NAME}",
+        "SHOPIFY_API_KEY": "${SHOPIFY_API_KEY}",
+        "SHOPIFY_API_PASSWORD": "${SHOPIFY_API_PASSWORD}"
+      }
+    }
+  },
+  "mongodb": {
+    "name": "MongoDB",
+    "description": "Query and manage MongoDB databases",
+    "npm": "@modelcontextprotocol/server-mongodb",
+    "fields": [
+      {
+        "key": "MONGODB_URI",
+        "label": "MongoDB Connection URI",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-mongodb", "${MONGODB_URI}"]
+    }
+  },
+  "mysql": {
+    "name": "MySQL",
+    "description": "Query and manage MySQL databases",
+    "npm": "@modelcontextprotocol/server-mysql",
+    "fields": [
+      {
+        "key": "MYSQL_HOST",
+        "label": "Host",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "MYSQL_PORT",
+        "label": "Port",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "MYSQL_USER",
+        "label": "Username",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "MYSQL_PASSWORD",
+        "label": "Password",
+        "url": null,
+        "secret": true
+      },
+      {
+        "key": "MYSQL_DATABASE",
+        "label": "Database",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-mysql"],
+      "env": {
+        "MYSQL_HOST": "${MYSQL_HOST}",
+        "MYSQL_PORT": "${MYSQL_PORT}",
+        "MYSQL_USER": "${MYSQL_USER}",
+        "MYSQL_PASSWORD": "${MYSQL_PASSWORD}",
+        "MYSQL_DATABASE": "${MYSQL_DATABASE}"
+      }
+    }
+  },
+  "brave-search": {
+    "name": "Brave Search",
+    "description": "Web search using Brave Search API",
+    "npm": "@modelcontextprotocol/server-brave-search",
+    "fields": [
+      {
+        "key": "BRAVE_API_KEY",
+        "label": "API Key",
+        "url": "https://api.search.brave.com/app/keys",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    }
+  },
+  "google-maps": {
+    "name": "Google Maps",
+    "description": "Search places and get directions",
+    "npm": "@modelcontextprotocol/server-google-maps",
+    "fields": [
+      {
+        "key": "GOOGLE_MAPS_API_KEY",
+        "label": "API Key",
+        "url": "https://console.cloud.google.com/apis/credentials",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-google-maps"],
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "${GOOGLE_MAPS_API_KEY}"
+      }
+    }
+  },
+  "weather": {
+    "name": "Weather",
+    "description": "Get weather forecasts and current conditions",
+    "npm": "@modelcontextprotocol/server-weather",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-weather"]
+    }
+  },
+  "memory": {
+    "name": "Memory",
+    "description": "Persistent memory storage for AI assistants",
+    "npm": "@modelcontextprotocol/server-memory",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    }
+  },
+  "puppeteer": {
+    "name": "Puppeteer",
+    "description": "Browser automation and web scraping",
+    "npm": "@modelcontextprotocol/server-puppeteer",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+    }
+  },
+  "playwright": {
+    "name": "Playwright",
+    "description": "Cross-browser automation and testing",
+    "npm": "@modelcontextprotocol/server-playwright",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-playwright"]
+    }
+  },
+  "sentry": {
+    "name": "Sentry",
+    "description": "Error tracking and performance monitoring",
+    "npm": "@modelcontextprotocol/server-sentry",
+    "fields": [
+      {
+        "key": "SENTRY_API_KEY",
+        "label": "API Key",
+        "url": "https://sentry.io/settings/account/api/auth-tokens/",
+        "secret": true
+      },
+      {
+        "key": "SENTRY_ORG",
+        "label": "Organization Slug",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sentry"],
+      "env": {
+        "SENTRY_API_KEY": "${SENTRY_API_KEY}",
+        "SENTRY_ORG": "${SENTRY_ORG}"
+      }
+    }
+  },
+  "datadog": {
+    "name": "Datadog",
+    "description": "Monitoring and analytics platform",
+    "npm": "@modelcontextprotocol/server-datadog",
+    "fields": [
+      {
+        "key": "DATADOG_API_KEY",
+        "label": "API Key",
+        "url": "https://app.datadoghq.com/organization-settings/api-keys",
+        "secret": true
+      },
+      {
+        "key": "DATADOG_APP_KEY",
+        "label": "Application Key",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-datadog"],
+      "env": {
+        "DATADOG_API_KEY": "${DATADOG_API_KEY}",
+        "DATADOG_APP_KEY": "${DATADOG_APP_KEY}"
+      }
+    }
+  },
+  "grafana": {
+    "name": "Grafana",
+    "description": "Observability and data visualization",
+    "npm": "@modelcontextprotocol/server-grafana",
+    "fields": [
+      {
+        "key": "GRAFANA_URL",
+        "label": "Grafana Instance URL",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "GRAFANA_API_KEY",
+        "label": "API Key",
+        "url": "https://grafana.com/docs/grafana/latest/administration/api-keys/",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-grafana"],
+      "env": {
+        "GRAFANA_URL": "${GRAFANA_URL}",
+        "GRAFANA_API_KEY": "${GRAFANA_API_KEY}"
+      }
+    }
+  },
+  "openapi": {
+    "name": "OpenAPI",
+    "description": "Interact with any OpenAPI/Swagger API",
+    "npm": "@modelcontextprotocol/server-openapi",
+    "fields": [
+      {
+        "key": "OPENAPI_SPEC_URL",
+        "label": "OpenAPI Spec URL or file path",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-openapi", "${OPENAPI_SPEC_URL}"]
+    }
+  },
+  "graphql": {
+    "name": "GraphQL",
+    "description": "Query any GraphQL endpoint",
+    "npm": "@modelcontextprotocol/server-graphql",
+    "fields": [
+      {
+        "key": "GRAPHQL_ENDPOINT",
+        "label": "GraphQL Endpoint URL",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "GRAPHQL_TOKEN",
+        "label": "Auth Token (optional)",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-graphql", "${GRAPHQL_ENDPOINT}"],
+      "env": {
+        "GRAPHQL_TOKEN": "${GRAPHQL_TOKEN}"
+      }
+    }
+  },
+  "firebase": {
+    "name": "Firebase",
+    "description": "Manage Firebase projects and resources",
+    "npm": "@modelcontextprotocol/server-firebase",
+    "fields": [
+      {
+        "key": "FIREBASE_SERVICE_ACCOUNT",
+        "label": "Service Account JSON",
+        "url": "https://console.firebase.google.com/project/_/settings/serviceaccounts/adminsdk",
+        "secret": true
+      },
+      {
+        "key": "FIREBASE_PROJECT_ID",
+        "label": "Project ID",
+        "url": "https://console.firebase.google.com",
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-firebase"],
+      "env": {
+        "FIREBASE_SERVICE_ACCOUNT": "${FIREBASE_SERVICE_ACCOUNT}",
+        "FIREBASE_PROJECT_ID": "${FIREBASE_PROJECT_ID}"
+      }
+    }
+  },
+  "netlify": {
+    "name": "Netlify",
+    "description": "Deploy and manage Netlify sites",
+    "npm": "@modelcontextprotocol/server-netlify",
+    "fields": [
+      {
+        "key": "NETLIFY_API_TOKEN",
+        "label": "API Token",
+        "url": "https://app.netlify.com/applications/personal",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-netlify"],
+      "env": {
+        "NETLIFY_API_TOKEN": "${NETLIFY_API_TOKEN}"
+      }
+    }
+  },
+  "railway": {
+    "name": "Railway",
+    "description": "Deploy and manage Railway projects",
+    "npm": "@modelcontextprotocol/server-railway",
+    "fields": [
+      {
+        "key": "RAILWAY_API_TOKEN",
+        "label": "API Token",
+        "url": "https://railway.app/account/tokens",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-railway"],
+      "env": {
+        "RAILWAY_API_TOKEN": "${RAILWAY_API_TOKEN}"
+      }
+    }
+  },
+  "render": {
+    "name": "Render",
+    "description": "Deploy and manage Render services",
+    "npm": "@modelcontextprotocol/server-render",
+    "fields": [
+      {
+        "key": "RENDER_API_KEY",
+        "label": "API Key",
+        "url": "https://dashboard.render.com/u/settings#api",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-render"],
+      "env": {
+        "RENDER_API_KEY": "${RENDER_API_KEY}"
+      }
+    }
+  },
+  "heroku": {
+    "name": "Heroku",
+    "description": "Manage Heroku apps and add-ons",
+    "npm": "@modelcontextprotocol/server-heroku",
+    "fields": [
+      {
+        "key": "HEROKU_API_KEY",
+        "label": "API Key",
+        "url": "https://dashboard.heroku.com/account",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-heroku"],
+      "env": {
+        "HEROKU_API_KEY": "${HEROKU_API_KEY}"
+      }
+    }
+  },
+  "discord": {
+    "name": "Discord",
+    "description": "Manage Discord servers and send messages",
+    "npm": "@modelcontextprotocol/server-discord",
+    "fields": [
+      {
+        "key": "DISCORD_BOT_TOKEN",
+        "label": "Bot Token",
+        "url": "https://discord.com/developers/applications",
+        "secret": true
+      },
+      {
+        "key": "DISCORD_GUILD_ID",
+        "label": "Server/Guild ID",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-discord"],
+      "env": {
+        "DISCORD_BOT_TOKEN": "${DISCORD_BOT_TOKEN}",
+        "DISCORD_GUILD_ID": "${DISCORD_GUILD_ID}"
+      }
+    }
+  },
+  "openai": {
+    "name": "OpenAI",
+    "description": "Access OpenAI APIs (GPT, DALL-E, Whisper)",
+    "npm": "@modelcontextprotocol/server-openai",
+    "fields": [
+      {
+        "key": "OPENAI_API_KEY",
+        "label": "API Key",
+        "url": "https://platform.openai.com/api-keys",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-openai"],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+      }
+    }
+  },
+  "anthropic": {
+    "name": "Anthropic",
+    "description": "Access Anthropic APIs (Claude)",
+    "npm": "@modelcontextprotocol/server-anthropic",
+    "fields": [
+      {
+        "key": "ANTHROPIC_API_KEY",
+        "label": "API Key",
+        "url": "https://console.anthropic.com/settings/keys",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-anthropic"],
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}"
+      }
+    }
+  },
+  "huggingface": {
+    "name": "Hugging Face",
+    "description": "Access ML models and datasets",
+    "npm": "@modelcontextprotocol/server-huggingface",
+    "fields": [
+      {
+        "key": "HUGGINGFACE_API_KEY",
+        "label": "API Token",
+        "url": "https://huggingface.co/settings/tokens",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-huggingface"],
+      "env": {
+        "HUGGINGFACE_API_KEY": "${HUGGINGFACE_API_KEY}"
+      }
+    }
+  },
+  "dropbox": {
+    "name": "Dropbox",
+    "description": "Access and manage Dropbox files",
+    "npm": "@modelcontextprotocol/server-dropbox",
+    "fields": [
+      {
+        "key": "DROPBOX_ACCESS_TOKEN",
+        "label": "Access Token",
+        "url": "https://www.dropbox.com/developers/apps",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-dropbox"],
+      "env": {
+        "DROPBOX_ACCESS_TOKEN": "${DROPBOX_ACCESS_TOKEN}"
+      }
+    }
+  },
+  "asana": {
+    "name": "Asana",
+    "description": "Manage Asana tasks and projects",
+    "npm": "@modelcontextprotocol/server-asana",
+    "fields": [
+      {
+        "key": "ASANA_PERSONAL_ACCESS_TOKEN",
+        "label": "Personal Access Token",
+        "url": "https://app.asana.com/-/developer_console",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-asana"],
+      "env": {
+        "ASANA_PERSONAL_ACCESS_TOKEN": "${ASANA_PERSONAL_ACCESS_TOKEN}"
+      }
+    }
+  },
+  "trello": {
+    "name": "Trello",
+    "description": "Manage Trello boards and cards",
+    "npm": "@modelcontextprotocol/server-trello",
+    "fields": [
+      {
+        "key": "TRELLO_API_KEY",
+        "label": "API Key",
+        "url": "https://trello.com/power-ups/admin",
+        "secret": true
+      },
+      {
+        "key": "TRELLO_TOKEN",
+        "label": "Token",
+        "url": "https://trello.com/app-key",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-trello"],
+      "env": {
+        "TRELLO_API_KEY": "${TRELLO_API_KEY}",
+        "TRELLO_TOKEN": "${TRELLO_TOKEN}"
+      }
+    }
+  },
+  "clickup": {
+    "name": "ClickUp",
+    "description": "Manage ClickUp tasks and spaces",
+    "npm": "@modelcontextprotocol/server-clickup",
+    "fields": [
+      {
+        "key": "CLICKUP_API_KEY",
+        "label": "API Key",
+        "url": "https://app.clickup.com/api",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-clickup"],
+      "env": {
+        "CLICKUP_API_KEY": "${CLICKUP_API_KEY}"
+      }
+    }
+  },
+  "monday": {
+    "name": "Monday.com",
+    "description": "Manage Monday.com boards and items",
+    "npm": "@modelcontextprotocol/server-monday",
+    "fields": [
+      {
+        "key": "MONDAY_API_KEY",
+        "label": "API Key",
+        "url": "https://monday.com/developers",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-monday"],
+      "env": {
+        "MONDAY_API_KEY": "${MONDAY_API_KEY}"
+      }
+    }
+  },
+  "zendesk": {
+    "name": "Zendesk",
+    "description": "Manage Zendesk tickets and users",
+    "npm": "@modelcontextprotocol/server-zendesk",
+    "fields": [
+      {
+        "key": "ZENDESK_SUBDOMAIN",
+        "label": "Subdomain",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "ZENDESK_EMAIL",
+        "label": "Email",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "ZENDESK_API_TOKEN",
+        "label": "API Token",
+        "url": "https://developer.zendesk.com/getting-started/getting-data",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-zendesk"],
+      "env": {
+        "ZENDESK_SUBDOMAIN": "${ZENDESK_SUBDOMAIN}",
+        "ZENDESK_EMAIL": "${ZENDESK_EMAIL}",
+        "ZENDESK_API_TOKEN": "${ZENDESK_API_TOKEN}"
+      }
+    }
+  },
+  "hubspot": {
+    "name": "HubSpot",
+    "description": "Manage HubSpot CRM contacts and deals",
+    "npm": "@modelcontextprotocol/server-hubspot",
+    "fields": [
+      {
+        "key": "HUBSPOT_ACCESS_TOKEN",
+        "label": "Access Token",
+        "url": "https://app.hubspot.com/developer",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-hubspot"],
+      "env": {
+        "HUBSPOT_ACCESS_TOKEN": "${HUBSPOT_ACCESS_TOKEN}"
+      }
+    }
+  },
+  "snowflake": {
+    "name": "Snowflake",
+    "description": "Query Snowflake data warehouse",
+    "npm": "@modelcontextprotocol/server-snowflake",
+    "fields": [
+      {
+        "key": "SNOWFLAKE_ACCOUNT",
+        "label": "Account Identifier",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "SNOWFLAKE_USERNAME",
+        "label": "Username",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "SNOWFLAKE_PASSWORD",
+        "label": "Password",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-snowflake"],
+      "env": {
+        "SNOWFLAKE_ACCOUNT": "${SNOWFLAKE_ACCOUNT}",
+        "SNOWFLAKE_USERNAME": "${SNOWFLAKE_USERNAME}",
+        "SNOWFLAKE_PASSWORD": "${SNOWFLAKE_PASSWORD}"
+      }
+    }
+  },
+  "databricks": {
+    "name": "Databricks",
+    "description": "Query Databricks notebooks and clusters",
+    "npm": "@modelcontextprotocol/server-databricks",
+    "fields": [
+      {
+        "key": "DATABRICKS_HOST",
+        "label": "Workspace URL",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "DATABRICKS_TOKEN",
+        "label": "Access Token",
+        "url": "https://docs.databricks.com/dev-tools/api/latest/authentication.html",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-databricks"],
+      "env": {
+        "DATABRICKS_HOST": "${DATABRICKS_HOST}",
+        "DATABRICKS_TOKEN": "${DATABRICKS_TOKEN}"
+      }
+    }
+  },
+  "bigquery": {
+    "name": "BigQuery",
+    "description": "Query Google BigQuery datasets",
+    "npm": "@modelcontextprotocol/server-bigquery",
+    "fields": [
+      {
+        "key": "GOOGLE_APPLICATION_CREDENTIALS",
+        "label": "Service Account JSON",
+        "url": "https://console.cloud.google.com/apis/credentials",
+        "secret": true
+      },
+      {
+        "key": "BIGQUERY_PROJECT_ID",
+        "label": "Project ID",
+        "url": "https://console.cloud.google.com/bigquery",
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-bigquery"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "BIGQUERY_PROJECT_ID": "${BIGQUERY_PROJECT_ID}"
+      }
+    }
+  },
+  "elastic": {
+    "name": "Elasticsearch",
+    "description": "Search and analyze Elasticsearch indices",
+    "npm": "@modelcontextprotocol/server-elasticsearch",
+    "fields": [
+      {
+        "key": "ELASTICSEARCH_URL",
+        "label": "Elasticsearch URL",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "ELASTICSEARCH_API_KEY",
+        "label": "API Key",
+        "url": "https://www.elastic.co/guide/en/kibana/current/api-keys.html",
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-elasticsearch"],
+      "env": {
+        "ELASTICSEARCH_URL": "${ELASTICSEARCH_URL}",
+        "ELASTICSEARCH_API_KEY": "${ELASTICSEARCH_API_KEY}"
+      }
+    }
+  },
+  "neo4j": {
+    "name": "Neo4j",
+    "description": "Query Neo4j graph databases",
+    "npm": "@modelcontextprotocol/server-neo4j",
+    "fields": [
+      {
+        "key": "NEO4J_URI",
+        "label": "Neo4j URI",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "NEO4J_USERNAME",
+        "label": "Username",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "NEO4J_PASSWORD",
+        "label": "Password",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-neo4j"],
+      "env": {
+        "NEO4J_URI": "${NEO4J_URI}",
+        "NEO4J_USERNAME": "${NEO4J_USERNAME}",
+        "NEO4J_PASSWORD": "${NEO4J_PASSWORD}"
+      }
+    }
+  },
+  "rabbitmq": {
+    "name": "RabbitMQ",
+    "description": "Manage RabbitMQ queues and messages",
+    "npm": "@modelcontextprotocol/server-rabbitmq",
+    "fields": [
+      {
+        "key": "RABBITMQ_URL",
+        "label": "RabbitMQ Connection URL",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-rabbitmq", "${RABBITMQ_URL}"]
+    }
+  },
+  "kafka": {
+    "name": "Kafka",
+    "description": "Produce and consume Kafka messages",
+    "npm": "@modelcontextprotocol/server-kafka",
+    "fields": [
+      {
+        "key": "KAFKA_BROKERS",
+        "label": "Broker Addresses (comma-separated)",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "KAFKA_SASL_USERNAME",
+        "label": "SASL Username",
+        "url": null,
+        "secret": false
+      },
+      {
+        "key": "KAFKA_SASL_PASSWORD",
+        "label": "SASL Password",
+        "url": null,
+        "secret": true
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-kafka"],
+      "env": {
+        "KAFKA_BROKERS": "${KAFKA_BROKERS}",
+        "KAFKA_SASL_USERNAME": "${KAFKA_SASL_USERNAME}",
+        "KAFKA_SASL_PASSWORD": "${KAFKA_SASL_PASSWORD}"
+      }
+    }
+  },
+  "obsidian": {
+    "name": "Obsidian",
+    "description": "Access Obsidian vaults and notes",
+    "npm": "mcp-server-obsidian",
+    "fields": [
+      {
+        "key": "OBSIDIAN_VAULT_PATH",
+        "label": "Vault path",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-obsidian", "--vault", "${OBSIDIAN_VAULT_PATH}"]
+    }
+  },
+  "logseq": {
+    "name": "Logseq",
+    "description": "Access Logseq graphs and pages",
+    "npm": "mcp-server-logseq",
+    "fields": [
+      {
+        "key": "LOGSEQ_GRAPH_PATH",
+        "label": "Graph path",
+        "url": null,
+        "secret": false
+      }
+    ],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-logseq", "--graph", "${LOGSEQ_GRAPH_PATH}"]
+    }
+  },
+  "everything": {
+    "name": "Everything (Test Server)",
+    "description": "Test MCP server with all capabilities",
+    "npm": "@modelcontextprotocol/server-everything",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-everything"]
+    }
+  },
+  "web-search": {
+    "name": "Web Search",
+    "description": "Search the web with multiple engines",
+    "npm": "@modelcontextprotocol/server-web-search",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-web-search"]
+    }
+  },
+  "fetch": {
+    "name": "URL Fetcher",
+    "description": "Fetch and summarize web pages",
+    "npm": "@modelcontextprotocol/server-fetch",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    }
+  },
+  "calculator": {
+    "name": "Calculator",
+    "description": "Perform mathematical calculations",
+    "npm": "@modelcontextprotocol/server-calculator",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-calculator"]
+    }
+  },
+  "time": {
+    "name": "Time",
+    "description": "Get current time and timezone info",
+    "npm": "@modelcontextprotocol/server-time",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-time"]
+    }
+  },
+  "system": {
+    "name": "System Commands",
+    "description": "Execute system shell commands safely",
+    "npm": "@modelcontextprotocol/server-system",
+    "fields": [],
+    "config": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-system"]
+    }
+  }
+}
