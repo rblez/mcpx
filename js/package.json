@@ -1,6 +1,6 @@
 {
-  "name": "mcpx-cli",
-  "version": "0.2.0",
+  "name": "@rblez/mcpx",
+  "version": "0.2.1",
   "description": "CLI to install and configure MCP servers in any editor",
   "keywords": [
     "mcp",
@@ -50,5 +50,8 @@
     "bin",
     "src",
     "registry.json"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
