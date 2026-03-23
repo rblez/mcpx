@@ -1,5 +1,5 @@
 {
-  "name": "mcpx",
+  "name": "mcpx-cli",
   "version": "0.2.0",
   "description": "CLI to install and configure MCP servers in any editor",
   "keywords": [
