@@ -3,7 +3,12 @@ import os
 import sys
 from pathlib import Path
 
-REGISTRY_PATH = Path(__file__).parent.parent.parent / "registry.json"
+# Try to find registry.json in package directory first, then fallback to root
+PACKAGE_DIR = Path(__file__).parent
+REGISTRY_PATH = PACKAGE_DIR / "registry.json"
+if not REGISTRY_PATH.exists():
+    REGISTRY_PATH = PACKAGE_DIR.parent.parent / "registry.json"
+
 MCPX_DIR = Path.home() / ".mcpx"
 STATE_FILE = MCPX_DIR / "state.json"
 
